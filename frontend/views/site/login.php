@@ -6,6 +6,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\file\FileInput;
 
 $this->title = '登录';
 $this->params['breadcrumbs'][] = $this->title;
@@ -23,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                <?= $form->field($model, 'rememberMe')->checkbox() ?>               
 
                 <div style="color:#999;margin:1em 0">
                                                         已经忘记密码了？<?= Html::a('重置', ['site/request-password-reset']) ?>.

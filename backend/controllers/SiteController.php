@@ -3,8 +3,10 @@ namespace backend\controllers;
 
 use Yii;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use backend\models\Image;
 use common\models\LoginForm;
 
 /**
@@ -60,7 +62,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new Image();
+        return $this->render('index', [
+            'model' => $model,
+        ]);
+        
     }
 
     /**
