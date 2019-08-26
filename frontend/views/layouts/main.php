@@ -72,7 +72,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; 晓龙版权所有<?= date('Y') ?></p>
+        <p class="pull-left">&copy; 小龙版权所有<?= date('Y') ?></p>
 
         <p class="pull-right">Powered by 小龙</p>
     </div>
