@@ -6,8 +6,8 @@ use yii\web\Controller;
 use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use backend\models\Image;
 use common\models\LoginForm;
+use common\models\UploadForm;
 
 /**
  * Site controller
@@ -62,7 +62,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Image();
+        $model = new UploadForm();       
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->upload()) {
+                // 文件上传成功
+                return;
+            }
+        }
         return $this->render('index', [
             'model' => $model,
         ]);
