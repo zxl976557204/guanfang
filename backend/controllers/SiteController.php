@@ -69,8 +69,7 @@ class SiteController extends Controller
             $model->image = UploadedFile::getInstance($model, 'image');   
             if ($model->upload()) {
                 $image->image = $model->image;
-                print ($model->image);
-                $image->save();
+                $image->save(FALSE);
                 // 文件上传成功
                 return '文件上传成功';
             }

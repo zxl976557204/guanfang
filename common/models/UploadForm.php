@@ -3,6 +3,7 @@ namespace common\models;
 use yii\base\Model;
 use yii\web\UploadedFile;
 use common\models\Image;
+use phpDocumentor\Reflection\Types\String_;
 
 class UploadForm extends Model
 {
@@ -29,7 +30,11 @@ class UploadForm extends Model
     {
         $image = new Image();
         if ($this->validate()) {
-            $image->image = $this->image->saveAs('uploads/' . $this->image->baseName . '.' . $this->image->extension);
+            $image->image = $this->image->saveAs('uploads/' .$_SERVER['REQUEST_TIME'].
+            '-'.
+            $this->image->baseName .
+            '.' . 
+            $this->image->extension/* 文件后缀 */);
             
             return true;
         } else {

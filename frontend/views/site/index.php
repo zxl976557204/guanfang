@@ -5,12 +5,10 @@
 $this->title = '小龙独特网页';
 ?>
 <div class="site-index">
+<?php if (!empty($image)): ?>
 
-    <div class="jumbotron">
-        <h1>恭喜你!</h1>
-
-        <p class="lead">你已经成功访问本页面了</p>
-
-        <p><a class="btn btn-lg btn-success" href="">点击送老婆</a></p>
-    </div>  
+<?php foreach ($image as $img): ?>
+<img src = "uploads/<?=$img->image ?>" >
+<?php endforeach; ?>
+<?php endif; ?>
 </div>
