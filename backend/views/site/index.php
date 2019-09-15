@@ -19,16 +19,15 @@ use yii\helpers\Url;
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 
         <?php 
-        echo $form->field($model, 'image[]')->label('美图')->widget(FileInput::classname(), [
-        'options' => ['multiple' => true],
+        echo $form->field($model, 'image')->label('美图')->widget(FileInput::classname(), [
+        'options' => ['multiple' => false],
         'pluginOptions' => [
         // 需要预览的文件格式
         'previewFileType' => 'image',        
         ],
         ]);
          ?>
+         
         <?php ActiveForm::end(); ?>
-
     </div>
-
 </div>
