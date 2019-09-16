@@ -28,13 +28,22 @@ class UploadForm extends Model
     
     public function upload()
     {
-        $image = new Image();
+        $img = new Image();
         if ($this->validate()) {
-            $image->image = $this->image->saveAs('uploads/' .$_SERVER['REQUEST_TIME'].
+            $this->image->saveAs('uploads/' .$_SERVER['REQUEST_TIME'].
             '-'.
             $this->image->baseName .
             '.' . 
             $this->image->extension/* 文件后缀 */);
+            
+            $img->image ='admin/uploads/' .$_SERVER['REQUEST_TIME'].
+            '-'.
+            $this->image->baseName .
+            '.' .
+            $this->image->extension ;
+            
+            
+            $img->save(FALSE);
             
             return true;
         } else {

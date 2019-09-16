@@ -64,12 +64,9 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new UploadForm();
-        $image = new Image();
         if (Yii::$app->request->isPost) {
             $model->image = UploadedFile::getInstance($model, 'image');   
             if ($model->upload()) {
-                $image->image = $model->image;
-                $image->save(FALSE);
                 // 文件上传成功
                 return '文件上传成功';
             }
