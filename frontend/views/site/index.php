@@ -8,7 +8,9 @@ $this->title = '小龙独特网页';
 <?php if (!empty($image)): ?>
 
 <?php foreach ($image as $img): ?>
-<img src = "<?=$img->image ?>" >
+<div class="div1">
+<img src = "<?=$img->image ?>"
+</div>
 <?php endforeach; ?>
 <?php endif; ?>
 </div>
